@@ -12,6 +12,20 @@ A TikTok-style educational video app that plays random 10-second clips from YouT
 - **Touch gestures** - Swipe up/down to navigate
 - **Mouse wheel** navigation
 
+## Structure
+
+src/
+├── components/
+│   ├── Reel.jsx           # Main video player component
+│   ├── Comments.jsx       # Comments modal
+│   ├── Loading.jsx        # Loading screen
+│   └── Error.jsx          # Error handling
+├── utils/
+│   ├── youtubeUtils.js    # YouTube video ID extraction
+│   └── shuffleUtils.js    # Array shuffling utilities
+├── App.jsx                # Main application component
+└── main.jsx              # Application entry point
+
 ## Controls
 
 - **Scroll wheel** or **Arrow keys** - Navigate videos
