@@ -150,9 +150,8 @@ const Reel = React.memo(({ video, transcription, isActive, onNext, onPrevious, i
                     color: 'white',
                     origin: window.location.origin,
                     enablejsapi: 1,
-                    // Faster loading parameters
                     html5: 1,
-                    hd: 0, // Start with lower quality for faster loading
+                    hd: 0,
                 },
                 events: {
                     onReady: (event) => {
@@ -160,12 +159,10 @@ const Reel = React.memo(({ video, transcription, isActive, onNext, onPrevious, i
                         setVideoLoaded(true);
                         setIsInitializing(false);
                         
-                        // Set initial mute state
                         if (isMuted) {
                             event.target.mute();
                         }
 
-                        // If this is the active video and not preloading, start playing
                         if (isActive && !isPreloading) {
                             initTimeoutRef.current = setTimeout(() => {
                                 try {
@@ -189,7 +186,6 @@ const Reel = React.memo(({ video, transcription, isActive, onNext, onPrevious, i
                         } else if (state === window.YT.PlayerState.ENDED) {
                             onNext();
                         } else if (state === window.YT.PlayerState.BUFFERING) {
-                            // Video is buffering, show loading state briefly
                             setIsPlaying(false);
                         }
                     },
@@ -221,8 +217,8 @@ const Reel = React.memo(({ video, transcription, isActive, onNext, onPrevious, i
     }, [videoId, isActive, isPreloading, createPlayer, destroyPlayer]);
 
     const startProgressTracking = useCallback(() => {
-        if (intervalRef.current) return; // Already tracking
-
+        if (intervalRef.current) return; 
+        
         intervalRef.current = setInterval(() => {
             if (playerRef.current && typeof playerRef.current.getCurrentTime === 'function') {
                 try {
