@@ -1,12 +1,45 @@
-# React + Vite
+# Youverse Reels
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A TikTok-style educational video app that plays random 10-second clips from YouTube videos.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Vertical scrolling** through educational content
+- **10-second clips** from random YouTube videos
+- **Interactive controls** - like, comment, share
+- **Auto-advance** to next video
+- **Keyboard shortcuts** - Space (play/pause), M (mute), Arrow keys (navigate)
+- **Touch gestures** - Swipe up/down to navigate
+- **Mouse wheel** navigation
 
-## Expanding the ESLint configuration
+## Controls
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Scroll wheel** or **Arrow keys** - Navigate videos
+- **Space** - Play/pause
+- **M** - Toggle mute
+- **Tap screen** - Play/pause
+- **Swipe up/down** - Navigate on mobile
+
+## Tech Stack
+
+- React + Framer Motion
+- YouTube Iframe API
+- Tailwind CSS
+- Lucide React icons
+
+## Setup
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start development server: `npm run dev`
+4. Open in browser
+
+## API Data
+
+The app fetches video data and transcriptions from JSONBin APIs configured in the main App component.
+
+## Performance
+
+- Preloads next 2 videos for smooth scrolling
+- Optimized YouTube player initialization
+- Efficient state management
